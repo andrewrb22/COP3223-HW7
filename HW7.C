@@ -25,23 +25,34 @@ void swap(int *p1, int *p2)
        
     
 }
+//QUESTION # 5 Delete the call of the swap function from main (not the function swap), 
+// and along with the code of the print and 
+//swap functions as described above, what does this 
+// code print to the screen?
 //----------------SWAP_ELEMENTS FUNCTION-------------------------//
-void swap_elements(int *a)
+int swap_elements(int *a)
 {
     int i;
+    int swapped = 0;
     for (i=0; i<SIZE-1; i++){
         if(a[i] > a[i+1]){
             swap(a+1, a+i+1);
+            swapped = 1;
         }
     }
+    return swapped;
 }
 //------------------MAIN FUNCTION----------------------------//
 int main()
 {
-    int i ;
+    // int i ;
     int array[5] = {41, 5, 8, 9, 5};
+    // int keep_swapping = swap_elements (array); 
     swap_elements(array);
+    print(array);
+    // swap_elements(array);
     // swap(&array[0], &array[1]);
+    // print(array);
     // print(array);
 
     return 0;

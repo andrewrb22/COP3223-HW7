@@ -25,13 +25,25 @@ void swap(int *p1, int *p2)
        
     
 }
+//----------------SWAP_ELEMENTS FUNCTION-------------------------//
+void swap_elements(int *a)
+{
+    int i;
+    for (i=0; i<SIZE-1; i++){
+        if(a[i] > a[i+1]){
+            swap(a+1, a+i+1);
+        }
+    }
+}
 //------------------MAIN FUNCTION----------------------------//
 int main()
 {
     int i ;
     int array[5] = {41, 5, 8, 9, 5};
-    swap(&array[0], &array[1]);
-    print(array);
+    swap_elements(array);
+    // swap(&array[0], &array[1]);
+    // print(array);
+
     return 0;
 }
 

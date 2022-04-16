@@ -1,13 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define SIZE 5
+#define MAX 100
 
+
+//------------GET SCORES INTO ARRAY AND HOW MANY SCORES-----------------
+void load(int *a, int *s)
+{
+    int i;
+
+    printf("\nEnter how many Number: ");
+    scanf("%d", s);
+
+    printf("\nEnter your %d Numbers here: ", *s);
+    for (i = 0; i < *s; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+}
 //-----------------PRINT FUNCTION---------------------------
-void print(int *a);
-void print(int *a)
+void print(int *a, int s);
+void print(int *a, int s)
 {
     int index = 0;
-    while (index < SIZE)
+    while (index < s)
     {
         printf("array[%d] = %d\n", index, a[index++]);
     }
@@ -25,12 +40,12 @@ void swap(int *p1, int *p2)
 
 //----------------SWAP_ELEMENTS FUNCTION-------------------------//
 
-int swap_elements(int *a)
+int swap_elements(int *a, int s)
 {
     int i, swapped;
-    for (i = 0; i < SIZE - 1; i++)
+    for (i = 0; i < s - 1; i++)
     {
-        for (swapped = 0; swapped < SIZE - 1; swapped++)
+        for (swapped = 0; swapped < s - 1; swapped++)
         {
             if (a[swapped] > a[swapped + 1])
                 swap(&a[swapped], &a[swapped + 1]);
@@ -41,12 +56,13 @@ int swap_elements(int *a)
 
 int main()
 {
-    int keep_swapping = 0;
-    int array[5] = {15, 11, 88, 154, 44};
+    int list[MAX] = {0};
+    int limit = 0;
 
-    swap_elements(array);
-    printf("\n\n\nTHE BUBBLE SORT ALGORITHM\n\n\n");
-    print(array);
+    load(list, &limit);
+    swap_elements(list, limit);
+    printf("\nHere is your list:\n");
+    print(list, limit);
 
     return 0;
 }

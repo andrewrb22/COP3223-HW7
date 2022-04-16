@@ -3,7 +3,7 @@
 #define MAX 100
 
 
-//------------GET SCORES INTO ARRAY AND HOW MANY SCORES-----------------
+//------------GET LIST OF NUMBERS FROM USER-----------------
 void load(int *a, int *s)
 {
     int i;

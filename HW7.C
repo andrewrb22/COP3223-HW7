@@ -8,10 +8,10 @@ void load(int *a, int *s)
 {
     int i;
 
-    printf("\nEnter how many Number: ");
+    printf("\nEnter how many number: ");
     scanf("%d", s);
 
-    printf("\nEnter your %d Numbers here: ", *s);
+    printf("\nEnter your %d numbers here: ", *s);
     for (i = 0; i < *s; i++)
     {
         scanf("%d", &a[i]);
@@ -61,7 +61,7 @@ int main()
 
     load(list, &limit);
     swap_elements(list, limit);
-    printf("\nHere is your list:\n");
+    printf("\n\tHere is your list:\n\n");
     print(list, limit);
 
     return 0;

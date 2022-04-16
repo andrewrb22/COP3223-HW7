@@ -3,7 +3,7 @@
 #define SIZE 5
 
 //-----------------PRINT FUNCTION---------------------------
-void print(int *);
+void print(int *a);
 void print(int *a)
 {
     int index = 0;
@@ -25,42 +25,48 @@ void swap(int *p1, int *p2)
        
     
 }
-//QUESTION # 5 Delete the call of the swap function from main (not the function swap), 
-// and along with the code of the print and 
-//swap functions as described above, what does this 
-// code print to the screen?
+
 //----------------SWAP_ELEMENTS FUNCTION-------------------------//
+
 int swap_elements(int *a)
 {
-    int i;
-    int swapped = 0;
-    for (i=0; i<SIZE-1; i++){
-        if(a[i] > a[i+1]){
-            swap(a+1, a+i+1);
-            swapped = 1;
+    int i, swapped;
+    for( i = 0 ;  i < SIZE -1; i++)
+    {
+        for(swapped = 0; swapped < SIZE - 1; swapped++){
+            if (a[swapped]> a[swapped + 1])
+            swap(&a[swapped], &a[swapped + 1]);
         }
     }
-    return swapped;
+   
+
+    
 }
 //------------------MAIN FUNCTION----------------------------//
 int main()
 {
-    // int i ;
-    int array[5] = {41, 5, 8, 9, 5};
-    // int keep_swapping = swap_elements (array); 
+    int keep_swapping = 0;
+    int array [5]= {15, 11, 88, 154, 44};
+    // int pass = 1;
+    
+    // keep_swapping = swap_elements(array); 
     swap_elements(array);
+
+    // while ( keep_swapping == 1)
+    // {
+    //     keep_swapping = swap_elements(array);
+    //     printf("PASS NUMBER %d\n", pass++);
+    //     print(array);
+    //     printf("++++++++++++++++++++++++++\n");
+    // }
+    
+    printf ("\n\n\nTHE BUBBLE SORT ALGORITHM\n\n\n"); 
     print(array);
-    // swap_elements(array);
-    // swap(&array[0], &array[1]);
-    // print(array);
-    // print(array);
+    
 
     return 0;
 }
 
 //-------RESULT---------//
-// array[1] = 5
-// array[2] = 41
-// array[3] = 8
-// array[4] = 9
-// array[5] = 5
+
+// THE BUBBLE SORT ALGORITHM
